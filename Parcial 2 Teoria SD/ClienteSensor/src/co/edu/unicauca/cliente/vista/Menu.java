@@ -2,6 +2,7 @@
 package co.edu.unicauca.cliente.vista;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 
 public class Menu  extends JFrame{
@@ -18,6 +19,14 @@ public class Menu  extends JFrame{
         
         //Titulo
         setTitle("Notificación");
+    }
+    
+    private void iniciarComponentes(){
+        //Creación del panel
+        JPanel panel = new JPanel();
+        
+        //colocar el panel sobre la ventana
+        this.getContentPane().add(panel);
     }
     
 }

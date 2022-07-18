@@ -3,6 +3,7 @@ package co.edu.unicauca.cliente.servicios;
 import co.edu.unicauca.cliente.controladores.NotificacionCallbackImpl;
 import co.edu.unicauca.cliente.utilidades.UtilidadesRegistroC;
 import co.edu.unicauca.cliente.vista.Menu;
+import co.edu.unicauca.cliente.vista.NotificacionJF;
 import co.edu.unicauca.servidor.controladores.ControladorNotificacionInt;
 import java.rmi.RemoteException;
 
@@ -25,7 +26,7 @@ public class ClienteDeObjetos {
             objRemoto.registrarReferenciaCliente(objRemotoNotificacion);
             
            
-            Menu objMenu = new Menu();
+            NotificacionJF objMenu = new NotificacionJF();
             objMenu.setVisible(true);
                  
              System.out.println("funciona");
