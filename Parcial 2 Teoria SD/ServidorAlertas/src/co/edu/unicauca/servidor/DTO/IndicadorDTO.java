@@ -1,6 +1,8 @@
 package co.edu.unicauca.servidor.DTO;
 
-public class IndicadorDTO {
+import java.io.Serializable;
+
+public class IndicadorDTO implements Serializable {
     
     private int numHabitacion;
     private float freCardiaca;

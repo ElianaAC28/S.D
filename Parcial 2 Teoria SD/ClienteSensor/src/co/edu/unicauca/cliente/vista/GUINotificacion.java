@@ -30,6 +30,10 @@ public class GUINotificacion extends javax.swing.JFrame {
         setVisible(true);
         mostrarInformacion(notificacion);
     }
+
+    public GUINotificacion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void mostrarInformacion(NotificacionDTO notificacion) {
         this.txtDatosPaciente.setText("El paciente en la habitacion "+notificacion.getObjIndicador().getNumHabitacion());

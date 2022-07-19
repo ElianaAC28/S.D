@@ -19,14 +19,18 @@ public class ServidorDeObjetos {
         System.out.println("Cual es el número de puerto por el cual escucha el rmiRegistry Canicones");
         numPuertoRMIRegistry = co.edu.unicauca.servidor.utilidades.UtilidadesConsola.leerEntero();
 
-        ControladorNotificacionImpl objNotificacion = new ControladorNotificacionImpl();
+        direccionIpRMIRegistryR = direccionIpRMIRegistry;
+        numPuertoRMIRegistryR = numPuertoRMIRegistry;
+        
+       ControladorNotificacionImpl objNotificacion = new ControladorNotificacionImpl();
         //obj remoto para indicadores
        ControladorGestorIndicadorImpl objIndicador = new ControladorGestorIndicadorImpl();
 
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistry);
+            UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistryR);
             UtilidadesRegistroS.RegistrarObjetoRemoto(objNotificacion, direccionIpRMIRegistry, numPuertoRMIRegistry, "objNotificacion");
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objIndicador, direccionIpRMIRegistry, numPuertoRMIRegistry, "objIndicador");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objIndicador, direccionIpRMIRegistryR, numPuertoRMIRegistryR, "objIndicador");
 
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());

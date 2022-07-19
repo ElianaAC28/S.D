@@ -1,6 +1,8 @@
 package co.edu.unicauca.servidor.DTO;
 
-public class NotificacionDTO {
+import java.io.Serializable;
+
+public class NotificacionDTO implements Serializable {
 
     private IndicadorDTO objIndicador;
     private boolean fueraRangoFreCardiaca;

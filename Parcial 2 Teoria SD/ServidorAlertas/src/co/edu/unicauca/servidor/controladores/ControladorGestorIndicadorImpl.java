@@ -23,7 +23,7 @@ public class ControladorGestorIndicadorImpl extends UnicastRemoteObject implemen
         boolean indicadores = false;
         
         if (objIndicadorDTO.getFreCardiaca() < 60 || objIndicadorDTO.getFreCardiaca() > 80) {
-            notificacion.setFueraRangoFreCardiaca(false);
+           notificacion.setFueraRangoFreCardiaca(false);
             contFueraRango++;
         } else {
             notificacion.setFueraRangoFreCardiaca(true);

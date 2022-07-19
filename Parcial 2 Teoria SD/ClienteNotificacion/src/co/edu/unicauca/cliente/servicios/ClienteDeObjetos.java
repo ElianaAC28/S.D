@@ -1,7 +1,6 @@
 package co.edu.unicauca.cliente.servicios;
 
-import co.edu.unicauca.cliente.controladores.ControladorGestorIndicadorImpl;
-import co.edu.unicauca.cliente.controladores.ControladorGestorIndicadorInt;
+import co.edu.unicauca.servidor.controladores.ControladorGestorIndicadorInt;
 import co.edu.unicauca.cliente.utilidades.UtilidadesConsola;
 import co.edu.unicauca.cliente.utilidades.UtilidadesRegistroC;
 import co.edu.unicauca.servidor.DTO.IndicadorDTO;
@@ -25,9 +24,6 @@ public class ClienteDeObjetos {
         System.out.println("probando");
         objRemoto = (ControladorGestorIndicadorInt) UtilidadesRegistroC.obtenerObjRemoto(direccionIpRMIRegistry, numPuertoRMIRegistry, "objIndicador");
         
-//        IndicadorDTO objRemoto = new IndicadorDTO();
-//        objRemoto.enviarIndicadores(objRemoto);
-        
         if (objRemoto != null) {
             int opc;
             do {
@@ -40,7 +36,7 @@ public class ClienteDeObjetos {
                         leerIndicadores();
                         break;
                     case 2:
-                        System.out.println("Hasta pronto");
+                        System.out.println("¡Hasta pronto!");
                         break;
                 }
             } while (opc != 2);
@@ -73,7 +69,7 @@ public class ClienteDeObjetos {
             if (Boolean.TRUE.equals(enviado)) {
                 System.out.println("Los indicadores se han enviado correctamente");
             } else {
-                System.out.println("ERROR! No fue posible enviar los indicadores");
+                System.out.println("!ERROR! No fue posible enviar los indicadores");
             }
         } catch (RemoteException e) {
             System.out.println("Error al registrar los indicadores "+e.getMessage());
