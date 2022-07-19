@@ -1,10 +1,10 @@
 package co.edu.unicauca.cliente.controladores;
 
-import co.edu.unicauca.servidor.DTO.IndicadorDTO;
+import co.edu.unicauca.servidor.DTO.NotificacionDTO;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface NotificacionCallbackInt extends Remote {
 
-    public void enviarNotificacion(IndicadorDTO objIndicador) throws RemoteException;
+    public void notificar(NotificacionDTO objNotificacion) throws RemoteException;
 }

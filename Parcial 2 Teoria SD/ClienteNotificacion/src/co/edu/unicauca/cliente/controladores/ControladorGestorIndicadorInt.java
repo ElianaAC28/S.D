@@ -6,5 +6,5 @@ import java.rmi.RemoteException;
 
 public interface ControladorGestorIndicadorInt extends Remote {
 
-    public void enviarIndicadores(IndicadorDTO objIndicador) throws RemoteException;
+    public boolean enviarIndicadores(IndicadorDTO objIndicador) throws RemoteException;
 }

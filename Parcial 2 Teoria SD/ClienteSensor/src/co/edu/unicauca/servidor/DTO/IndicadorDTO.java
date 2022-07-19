@@ -3,20 +3,22 @@ package co.edu.unicauca.servidor.DTO;
 public class IndicadorDTO {
     
     private int numHabitacion;
-    private double freCardiaca;
-    private double[] tensionArterial;
-    private double freRespiratoria;
-    private double temperatura;
-    private double satOxigeno;
+    private float freCardiaca;
+    private float tensionArterialSist;
+    private float tensionArterialDiast;
+    private float freRespiratoria;
+    private float temperatura;
+    private float satOxigeno;
     
     public IndicadorDTO(){
         //Constructor vacio
     }
 
-    public IndicadorDTO(int numHabitacion, double freCardiaca, double[] tensionArterial, double freRespiratoria, double temperatura, double satOxigeno) {
+    public IndicadorDTO(int numHabitacion, float freCardiaca, float tensionArterialSist, float tensionArterialDiast, float freRespiratoria, float temperatura, float satOxigeno) {
         this.numHabitacion = numHabitacion;
         this.freCardiaca = freCardiaca;
-        this.tensionArterial = tensionArterial;
+        this.tensionArterialSist = tensionArterialSist;
+        this.tensionArterialDiast = tensionArterialDiast;
         this.freRespiratoria = freRespiratoria;
         this.temperatura = temperatura;
         this.satOxigeno = satOxigeno;
@@ -30,44 +32,52 @@ public class IndicadorDTO {
         this.numHabitacion = numHabitacion;
     }
 
-    public double getFreCardiaca() {
+    public float getFreCardiaca() {
         return freCardiaca;
     }
 
-    public void setFreCardiaca(double freCardiaca) {
+    public void setFreCardiaca(float freCardiaca) {
         this.freCardiaca = freCardiaca;
     }
 
-    public double[] getTensionArterial() {
-        return tensionArterial;
+    public float getTensionArterialSist() {
+        return tensionArterialSist;
     }
 
-    public void setTensionArterial(double[] tensionArterial) {
-        this.tensionArterial = tensionArterial;
+    public void setTensionArterialSist(float tensionArterialSist) {
+        this.tensionArterialSist = tensionArterialSist;
     }
 
-    public double getFreRespiratoria() {
+    public float getTensionArterialDiast() {
+        return tensionArterialDiast;
+    }
+
+    public void setTensionArterialDiast(float tensionArterialDiast) {
+        this.tensionArterialDiast = tensionArterialDiast;
+    }
+
+    public float getFreRespiratoria() {
         return freRespiratoria;
     }
 
-    public void setFreRespiratoria(double freRespiratoria) {
+    public void setFreRespiratoria(float freRespiratoria) {
         this.freRespiratoria = freRespiratoria;
     }
 
-    public double getTemperatura() {
+    public float getTemperatura() {
         return temperatura;
     }
 
-    public void setTemperatura(double temperatura) {
+    public void setTemperatura(float temperatura) {
         this.temperatura = temperatura;
     }
 
-    public double getSatOxigeno() {
+    public float getSatOxigeno() {
         return satOxigeno;
     }
 
-    public void setSatOxigeno(double satOxigeno) {
+    public void setSatOxigeno(float satOxigeno) {
         this.satOxigeno = satOxigeno;
     }
+    
 }
-

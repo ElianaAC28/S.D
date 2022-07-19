@@ -1,14 +1,14 @@
-package co.edu.unicauca.cliente.controladores;
+package co.edu.unicauca.servidor.controladores;
 
-import co.edu.unicauca.cliente.utilidades.UtilidadesRegistroC;
 import co.edu.unicauca.servidor.DTO.IndicadorDTO;
 import co.edu.unicauca.servidor.DTO.NotificacionDTO;
+import co.edu.unicauca.servidor.utilidades.UtilidadesRegistroC;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class ControladorGestorIndicadorImpl extends UnicastRemoteObject implements ControladorGestorIndicadorInt {
 
-    ControladorGestorIndicadorInt objRemotoInd;
+    ControladorNotificacionInt objRemotoNotificacion;
     
     public ControladorGestorIndicadorImpl() throws RemoteException {
         super();
@@ -67,8 +67,8 @@ public class ControladorGestorIndicadorImpl extends UnicastRemoteObject implemen
         if (contFueraRango >= 2) {
             String direccionIp = "localhost";
             int puerto = 2020;
-            objRemotoInd = (ControladorGestorIndicadorInt) UtilidadesRegistroC.obtenerObjRemoto(direccionIp, puerto, "objIndicador");
-            if (objRemotoInd != null) {
+            objRemotoNotificacion = (ControladorNotificacionInt) UtilidadesRegistroC.obtenerObjRemoto(direccionIp, puerto, "gestionNotificacion");
+            if (objRemotoNotificacion != null) {
                 
             }
             indicadores = true;

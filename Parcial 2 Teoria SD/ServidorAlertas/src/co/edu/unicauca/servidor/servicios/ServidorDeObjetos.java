@@ -1,6 +1,6 @@
 package co.edu.unicauca.servidor.servicios;
 
-import co.edu.unicauca.servidor.controladores.ControladorGestorIndicadoresImpl;
+import co.edu.unicauca.servidor.controladores.ControladorGestorIndicadorImpl;
 import co.edu.unicauca.servidor.controladores.ControladorNotificacionImpl;
 import co.edu.unicauca.servidor.utilidades.UtilidadesRegistroS;
 import java.rmi.RemoteException;
@@ -21,12 +21,12 @@ public class ServidorDeObjetos {
 
         ControladorNotificacionImpl objNotificacion = new ControladorNotificacionImpl();
         //obj remoto para indicadores
-        ControladorGestorIndicadoresImpl objRemotoGestionAdministradores = new ControladorGestorIndicadoresImpl(objNotificacion);
+       ControladorGestorIndicadorImpl objIndicador = new ControladorGestorIndicadorImpl();
 
         try {
             UtilidadesRegistroS.arrancarNS(numPuertoRMIRegistry);
             UtilidadesRegistroS.RegistrarObjetoRemoto(objNotificacion, direccionIpRMIRegistry, numPuertoRMIRegistry, "objNotificacion");
-            UtilidadesRegistroS.RegistrarObjetoRemoto(objNotificacion, direccionIpRMIRegistry, numPuertoRMIRegistry, "objIndicador");
+            UtilidadesRegistroS.RegistrarObjetoRemoto(objIndicador, direccionIpRMIRegistry, numPuertoRMIRegistry, "objIndicador");
 
         } catch (Exception e) {
             System.err.println("No fue posible Arrancar el NS o Registrar el objeto remoto" + e.getMessage());
